@@ -308,7 +308,7 @@ allow_passwordssh() {
 }
 
 # temporary workaround form CRP 
-allow_passwordssh  
+# allow_passwordssh  
 
 check_os
 if [ $iscentos -ne 0 ] && [ $isubuntu -ne 0 ];
