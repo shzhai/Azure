@@ -13,6 +13,7 @@ NODENAME=$(hostname)
 MYSQLSTARTUP=${3}
 MYCNFTEMPLATE=${4}
 SECONDNIC=${5}
+ALLOWPWD=${6}
 
 MOUNTPOINT="/datadrive"
 RAIDCHUNKSIZE=512
@@ -308,8 +309,10 @@ allow_passwordssh() {
 }
 
 # temporary workaround form CRP 
-# allow_passwordssh  
-
+if [ -n "$ALLOWPWD" ];
+	then
+		allow_passwordssh  
+fi
 check_os
 if [ $iscentos -ne 0 ] && [ $isubuntu -ne 0 ];
 then
